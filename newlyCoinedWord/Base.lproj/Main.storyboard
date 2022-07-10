@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HomeViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="newlyCoinedWord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="newlyCoinedWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +37,9 @@
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vue-fs-232"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -124,6 +127,13 @@
                             <constraint firstItem="Y3m-pZ-diJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vpo-LJ-xOh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="R7h-KH-CPV" id="uYw-RP-8KQ"/>
+                        <outletCollection property="hashTags" destination="RxD-UR-tEx" collectionClass="NSMutableArray" id="JHF-VQ-Gmt"/>
+                        <outletCollection property="hashTags" destination="Be7-8E-AAx" collectionClass="NSMutableArray" id="I0m-TA-0At"/>
+                        <outletCollection property="hashTags" destination="vP7-Zl-TT9" collectionClass="NSMutableArray" id="aAZ-GZ-mlq"/>
+                        <outletCollection property="hashTags" destination="wdx-jf-T84" collectionClass="NSMutableArray" id="dfT-fZ-N25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
