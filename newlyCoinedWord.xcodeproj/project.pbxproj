@@ -13,6 +13,8 @@
 		0E5D3B0128782179004509BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D3AFF28782179004509BF /* Main.storyboard */; };
 		0E5D3B032878217D004509BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D3B022878217D004509BF /* Assets.xcassets */; };
 		0E5D3B062878217D004509BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5D3B042878217D004509BF /* LaunchScreen.storyboard */; };
+		0EDFC1F8287B2C6900AF0601 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFC1F7287B2C6900AF0601 /* UIViewController.swift */; };
+		0EDFC1FA287B466000AF0601 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFC1F9287B466000AF0601 /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0E5D3B022878217D004509BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E5D3B052878217D004509BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E5D3B072878217D004509BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EDFC1F7287B2C6900AF0601 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		0EDFC1F9287B466000AF0601 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				0E5D3B022878217D004509BF /* Assets.xcassets */,
 				0E5D3B042878217D004509BF /* LaunchScreen.storyboard */,
 				0E5D3B072878217D004509BF /* Info.plist */,
+				0EDFC1F7287B2C6900AF0601 /* UIViewController.swift */,
+				0EDFC1F9287B466000AF0601 /* UITextField.swift */,
 			);
 			path = newlyCoinedWord;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5D3AFE28782179004509BF /* HomeViewController.swift in Sources */,
+				0EDFC1FA287B466000AF0601 /* UITextField.swift in Sources */,
 				0E5D3AFA28782179004509BF /* AppDelegate.swift in Sources */,
+				0EDFC1F8287B2C6900AF0601 /* UIViewController.swift in Sources */,
 				0E5D3AFC28782179004509BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
