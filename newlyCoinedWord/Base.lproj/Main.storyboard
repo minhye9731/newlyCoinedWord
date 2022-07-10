@@ -47,40 +47,52 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxD-UR-tEx">
-                                        <rect key="frame" x="20" y="80" width="46" height="30"/>
+                                        <rect key="frame" x="20" y="80" width="70" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="JbZ-BM-cFa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be7-8E-AAx">
-                                        <rect key="frame" x="69" y="80" width="46" height="30"/>
+                                        <rect key="frame" x="93" y="80" width="70" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zx5-R7-rVL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-Zl-TT9">
-                                        <rect key="frame" x="118" y="80" width="46" height="30"/>
+                                        <rect key="frame" x="166" y="80" width="70" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2k8-9z-eQP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdx-jf-T84">
-                                        <rect key="frame" x="167" y="80" width="46" height="30"/>
+                                        <rect key="frame" x="239" y="80" width="70" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="jf9-42-3Nt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,6 +109,7 @@
                                     <constraint firstAttribute="height" constant="140" id="c79-eJ-TZA"/>
                                     <constraint firstItem="RxD-UR-tEx" firstAttribute="leading" secondItem="Y3m-pZ-diJ" secondAttribute="leading" constant="20" id="rEg-BW-6Zf"/>
                                     <constraint firstItem="Be7-8E-AAx" firstAttribute="leading" secondItem="RxD-UR-tEx" secondAttribute="trailing" constant="3" id="sAn-Th-jAF"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wdx-jf-T84" secondAttribute="trailing" constant="201" id="ucP-8J-B9P"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mPZ-5A-dgz">
@@ -114,6 +127,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zFy-ed-U8r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Fi-91-Cay"/>
                             <constraint firstItem="zFy-ed-U8r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="HMp-eD-n3D"/>
@@ -126,8 +140,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mPZ-5A-dgz" secondAttribute="trailing" id="prz-na-PHf"/>
                             <constraint firstItem="Y3m-pZ-diJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vpo-LJ-xOh"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="C91-8e-v7E" appends="YES" id="Z9j-M1-je0"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="resultLabel" destination="zFy-ed-U8r" id="lCU-fF-L2L"/>
                         <outlet property="searchTextField" destination="R7h-KH-CPV" id="uYw-RP-8KQ"/>
                         <outletCollection property="hashTags" destination="RxD-UR-tEx" collectionClass="NSMutableArray" id="JHF-VQ-Gmt"/>
                         <outletCollection property="hashTags" destination="Be7-8E-AAx" collectionClass="NSMutableArray" id="I0m-TA-0At"/>
@@ -136,6 +154,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C91-8e-v7E">
+                    <connections>
+                        <action selector="tapGestureClicked:" destination="BYZ-38-t0r" id="F9A-5f-HDe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="53.571428571428569"/>
         </scene>
