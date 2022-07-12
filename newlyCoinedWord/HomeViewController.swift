@@ -7,30 +7,61 @@
 
 import UIKit
 
+
+enum NewCoinedWord: String, CustomStringConvertible {
+    case 윰차
+    case 알잘딱깔쎈
+    case 내또출
+    case H워얼V
+    case 많관부
+    case 회의주의자
+    case 글설리
+    case Whyrano
+    case 너뭐돼
+    case 당모치
+    case 돼지런하다
+    case 무물
+    
+    var description: String {
+        switch self {
+        case .윰차: return "유명인과 무명인을 차별한다는 뜻"
+        case .알잘딱깔쎈: return "알아서 잘! 깔끔하고 센스있게~!"
+        case .내또출: return "내일 또 출근한다"
+        case .H워얼V: return "사랑한다는 뜻. 사랑해의 형태를 뒤집어서 표현한 것"
+        case .많관부: return "'많은 관심 부탁드립니다'의 줄임말"
+        case .회의주의자: return "뻑하면 회의하자고 하는 직장인"
+        case .글설리: return "글쓴이를 설레게 하는 리플"
+        case .Whyrano: return "왜이러냐의 사투리 표현인 와이라노를 영어로 적은 말"
+        case .너뭐돼: return "'너가 혹시 뭐라도 돼? 라는 뜻으로 유튜버 레오제이님으로 유명해진 유행어"
+        case .당모치: return "당연히 모든 치킨은 옳다"
+        case .돼지런하다: return "평소에는 행동이 느린데 먹을 때만 엄청 부지런하다"
+        case .무물: return "무엇이든 물어보세요"
+        }
+    }
+}
+
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
-    var newCoinedWord: [String : String] = [
-        "윰차" : "유명인과 무명인을 차별한다는 뜻",
-        "알잘딱깔쎈" : "알아서 잘! 깔끔하고 센스있게~!",
-        "내또출" : "내일 또 출근한다",
-        "H워얼V" : "사랑한다는 뜻. 사랑해의 형태를 뒤집어서 표현한 것",
-        "많관부" : "'많은 관심 부탁드립니다'의 줄임말",
-        "회의주의자" : "뻑하면 회의하자고 하는 직장인",
-        "글설리" : "글쓴이를 설레게 하는 리플",
-        "Whyrano" : "왜이러냐의 사투리 표현인 와이라노를 영어로 적은 말",
-        "너 뭐 돼?" : "'너가 혹시 뭐라도 돼? 라는 뜻으로 유튜버 레오제이님으로 유명해진 유행어",
-        "당모치" : "당연히 모든 치킨은 옳다",
-        "돼지런하다" : "평소에는 행동이 느린데 먹을 때만 엄청 부지런하다",
-        "무물" : "무엇이든 물어보세요"
-    ]
-
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet var hashTags: [UIButton]!
     @IBOutlet weak var resultLabel: UILabel!
     
+    var word1: NewCoinedWord = .윰차
+    var word2: NewCoinedWord = .알잘딱깔쎈
+    var word3: NewCoinedWord = .내또출
+    var word4: NewCoinedWord = .H워얼V
+    var word5: NewCoinedWord = .많관부
+    var word6: NewCoinedWord = .회의주의자
+    var word7: NewCoinedWord = .글설리
+    var word8: NewCoinedWord = .Whyrano
+    var word9: NewCoinedWord = .너뭐돼
+    var word10: NewCoinedWord = .당모치
+    var word11: NewCoinedWord = .돼지런하다
+    var word12: NewCoinedWord = .무물
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeNewCoinedWordRandom()
+//        changeNewCoinedWordRandom()
         setUI()
         searchTextField.delegate = self
     }
@@ -45,7 +76,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         searchTextField.autocorrectionType = .no
         // 텍스트필드 내부에 좌측 여백주기
         searchTextField.leftPadding()
-        
+
         // hashTags ui 설정
         for i in hashTags {
             i.backgroundColor = .white
@@ -53,7 +84,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             i.layer.borderColor = UIColor.black.cgColor
             i.setTitleColor(.black, for: .normal)
         }
-        
+
         // 결과라벨
         resultLabel.textColor = .black
         resultLabel.font = UIFont.systemFont(ofSize: 18)
@@ -61,30 +92,30 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - 신조어 예제 해쉬테그 랜덤표기
-    func changeNewCoinedWordRandom() {
-        // 신조어 키값 4개를 랜덤으로 추출하기
-        var randomKeys: [String] = []
-        
-        while randomKeys.count < 4 {
-            let randomkey = newCoinedWord.keys.randomElement()!
-            
-             if !randomKeys.contains(randomkey) {
-                 randomKeys.append(randomkey)
-             }
-             print(randomKeys.sorted())
-        }
-    
-        // 버튼 4개에 반복하여 적용
-        for i in 0...3 {
-            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
-            hashTags[i].setTitleColor(.black, for: .normal)
-            hashTags[i].backgroundColor = .white
-            hashTags[i].layer.cornerRadius = 8
-            hashTags[i].clipsToBounds = true
-            hashTags[i].layer.borderWidth = 1
-            hashTags[i].layer.borderColor = UIColor.black.cgColor
-        }
-    }
+//    func changeNewCoinedWordRandom() {
+//        // 신조어 키값 4개를 랜덤으로 추출하기
+//        var randomKeys: [String] = []
+//        
+//        while randomKeys.count < 4 {
+//            let randomkey = NewCoinedWord.allCases.randomElement()!
+//            
+//            if !randomKeys.contains(randomkey.rawValue) {
+//                randomKeys.append(randomkey.rawValue)
+//             }
+//             print(randomKeys.sorted())
+//        }
+//    
+//        // 버튼 4개에 반복하여 적용
+//        for i in 0...3 {
+//            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
+//            hashTags[i].setTitleColor(.black, for: .normal)
+//            hashTags[i].backgroundColor = .white
+//            hashTags[i].layer.cornerRadius = 8
+//            hashTags[i].clipsToBounds = true
+//            hashTags[i].layer.borderWidth = 1
+//            hashTags[i].layer.borderColor = UIColor.black.cgColor
+//        }
+//    }
     
     // MARK: - 검색버튼 클릭시
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -95,23 +126,50 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - 키보드 엔터키 클릭시
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchLogic()
-        changeNewCoinedWordRandom()
+//        changeNewCoinedWordRandom()
         return true
     }
     
     // MARK: - 신조어 검색 로직 및 키보드 내리기
     func searchLogic() {
-        if searchTextField.text == "" {
-            self.presentAlert(title: "신조어를 입력해주세요.")
-            return
-        } else if !newCoinedWord.keys.contains(searchTextField.text!) {
-            self.presentAlert(title: "찾으시는 신조어가 사전에 없습니다. 다른 신조어를 검색해주세요.")
-            return
+        
+        let text = searchTextField.text
+        
+        switch text {
+        case word1.rawValue:
+            resultLabel.text = word1.description
+        case word2.rawValue:
+            resultLabel.text = word2.description
+        case word3.rawValue:
+            resultLabel.text = word3.description
+        case word4.rawValue:
+            resultLabel.text = word4.description
+        case word5.rawValue:
+            resultLabel.text = word5.description
+        case word6.rawValue:
+            resultLabel.text = word6.description
+        case word7.rawValue:
+            resultLabel.text = word7.description
+        case word8.rawValue:
+            resultLabel.text = word8.description
+        case word9.rawValue:
+            resultLabel.text = word9.description
+        case word10.rawValue:
+            resultLabel.text = word10.description
+        case word11.rawValue:
+            resultLabel.text = word11.description
+        case word12.rawValue:
+            resultLabel.text = word12.description
+        default:
+            resultLabel.text = "검색 결과가 없습니다. 다른 신조어를 검색해주세요."
         }
-        resultLabel.text = newCoinedWord[searchTextField.text!]
-        view.endEditing(true)
     }
 
+    
+    
+    
+    
+    
     // MARK: - view 탭시 (키보드가 올라와있다면) 키보드를 내려줌
     @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
