@@ -8,7 +8,7 @@
 import UIKit
 
 
-enum NewCoinedWord: String, CustomStringConvertible {
+enum NewCoinedWord: String, CustomStringConvertible, CaseIterable {
     case 윰차
     case 알잘딱깔쎈
     case 내또출
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        changeNewCoinedWordRandom()
+        changeNewCoinedWordRandom()
         setUI()
         searchTextField.delegate = self
     }
@@ -92,30 +92,31 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - 신조어 예제 해쉬테그 랜덤표기
-//    func changeNewCoinedWordRandom() {
-//        // 신조어 키값 4개를 랜덤으로 추출하기
-//        var randomKeys: [String] = []
-//        
-//        while randomKeys.count < 4 {
-//            let randomkey = NewCoinedWord.allCases.randomElement()!
-//            
-//            if !randomKeys.contains(randomkey.rawValue) {
-//                randomKeys.append(randomkey.rawValue)
-//             }
-//             print(randomKeys.sorted())
-//        }
-//    
-//        // 버튼 4개에 반복하여 적용
-//        for i in 0...3 {
-//            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
-//            hashTags[i].setTitleColor(.black, for: .normal)
-//            hashTags[i].backgroundColor = .white
-//            hashTags[i].layer.cornerRadius = 8
-//            hashTags[i].clipsToBounds = true
-//            hashTags[i].layer.borderWidth = 1
-//            hashTags[i].layer.borderColor = UIColor.black.cgColor
-//        }
-//    }
+    func changeNewCoinedWordRandom() {
+        // 신조어 키값 4개를 랜덤으로 추출하기
+        var randomKeys: [String] = []
+        
+        while randomKeys.count < 4 {
+            let randomkey = NewCoinedWord.allCases.randomElement()!
+            print(randomkey)
+            
+            if !randomKeys.contains(randomkey.rawValue) {
+                randomKeys.append(randomkey.rawValue)
+             }
+             print(randomKeys.sorted())
+        }
+    
+        // 버튼 4개에 반복하여 적용
+        for i in 0...3 {
+            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
+            hashTags[i].setTitleColor(.black, for: .normal)
+            hashTags[i].backgroundColor = .white
+            hashTags[i].layer.cornerRadius = 8
+            hashTags[i].clipsToBounds = true
+            hashTags[i].layer.borderWidth = 1
+            hashTags[i].layer.borderColor = UIColor.black.cgColor
+        }
+    }
     
     // MARK: - 검색버튼 클릭시
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -126,7 +127,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - 키보드 엔터키 클릭시
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchLogic()
-//        changeNewCoinedWordRandom()
+        changeNewCoinedWordRandom()
         return true
     }
     
@@ -164,12 +165,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             resultLabel.text = "검색 결과가 없습니다. 다른 신조어를 검색해주세요."
         }
     }
-
-    
-    
-    
-    
-    
+        
     // MARK: - view 탭시 (키보드가 올라와있다면) 키보드를 내려줌
     @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
