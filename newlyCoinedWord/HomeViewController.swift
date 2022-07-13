@@ -91,44 +91,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         resultLabel.text = "신조어의 의미를 알아봅시다!"
     }
     
-    // MARK: - 신조어 예제 해쉬테그 랜덤표기
-    func changeNewCoinedWordRandom() {
-        // 신조어 키값 4개를 랜덤으로 추출하기
-        var randomKeys: [String] = []
-        
-        while randomKeys.count < 4 {
-            let randomkey = NewCoinedWord.allCases.randomElement()!
-            print(randomkey)
-            
-            if !randomKeys.contains(randomkey.rawValue) {
-                randomKeys.append(randomkey.rawValue)
-             }
-             print(randomKeys.sorted())
-        }
-    
-        // 버튼 4개에 반복하여 적용
-        for i in 0...3 {
-            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
-            hashTags[i].setTitleColor(.black, for: .normal)
-            hashTags[i].backgroundColor = .white
-            hashTags[i].layer.cornerRadius = 8
-            hashTags[i].clipsToBounds = true
-            hashTags[i].layer.borderWidth = 1
-            hashTags[i].layer.borderColor = UIColor.black.cgColor
-        }
-    }
-    
     // MARK: - 검색버튼 클릭시
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        searchLogic()
-        changeNewCoinedWordRandom()
+        searchAndHashtag()
     }
     
     // MARK: - 키보드 엔터키 클릭시
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchAndHashtag()
+        return true
+    }
+    
+    // MARK: - 검색 및 해시테그예제 랜덤표기
+    func searchAndHashtag() {
         searchLogic()
         changeNewCoinedWordRandom()
-        return true
     }
     
     // MARK: - 신조어 검색 로직 및 키보드 내리기
@@ -163,6 +140,34 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             resultLabel.text = word12.description
         default:
             resultLabel.text = "검색 결과가 없습니다. 다른 신조어를 검색해주세요."
+        }
+        view.endEditing(true)
+    }
+    
+    // MARK: - 신조어 예제 해쉬테그 랜덤표기
+    func changeNewCoinedWordRandom() {
+        // 신조어 키값 4개를 랜덤으로 추출하기
+        var randomKeys: [String] = []
+        
+        while randomKeys.count < 4 {
+            let randomkey = NewCoinedWord.allCases.randomElement()!
+            print(randomkey)
+            
+            if !randomKeys.contains(randomkey.rawValue) {
+                randomKeys.append(randomkey.rawValue)
+             }
+             print(randomKeys.sorted())
+        }
+    
+        // 버튼 4개에 반복하여 적용
+        for i in 0...3 {
+            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
+            hashTags[i].setTitleColor(.black, for: .normal)
+            hashTags[i].backgroundColor = .white
+            hashTags[i].layer.cornerRadius = 8
+            hashTags[i].clipsToBounds = true
+            hashTags[i].layer.borderWidth = 1
+            hashTags[i].layer.borderColor = UIColor.black.cgColor
         }
     }
         
