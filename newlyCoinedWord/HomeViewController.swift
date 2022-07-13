@@ -151,12 +151,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
         while randomKeys.count < 4 {
             let randomkey = NewCoinedWord.allCases.randomElement()!
-            print(randomkey)
+            let data = randomkey.rawValue
             
-            if !randomKeys.contains(randomkey.rawValue) {
-                randomKeys.append(randomkey.rawValue)
+            if !randomKeys.contains(data) {
+                randomKeys.append(data)
              }
-             print(randomKeys.sorted())
         }
     
         // 버튼 hashTags.count개에 반복하여 적용
