@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 enum NewCoinedWord: String, CustomStringConvertible, CaseIterable {
     case 윰차
     case 알잘딱깔쎈
@@ -46,18 +45,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var hashTags: [UIButton]!
     @IBOutlet weak var resultLabel: UILabel!
     
-    var word1: NewCoinedWord = .윰차
-    var word2: NewCoinedWord = .알잘딱깔쎈
-    var word3: NewCoinedWord = .내또출
-    var word4: NewCoinedWord = .H워얼V
-    var word5: NewCoinedWord = .많관부
-    var word6: NewCoinedWord = .회의주의자
-    var word7: NewCoinedWord = .글설리
-    var word8: NewCoinedWord = .Whyrano
-    var word9: NewCoinedWord = .너뭐돼
-    var word10: NewCoinedWord = .당모치
-    var word11: NewCoinedWord = .돼지런하다
-    var word12: NewCoinedWord = .무물
+    var words: [NewCoinedWord] = NewCoinedWord.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,36 +100,35 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func searchLogic() {
         
         let text = searchTextField.text
-        
+
         switch text {
-        case word1.rawValue:
-            resultLabel.text = word1.description
-        case word2.rawValue:
-            resultLabel.text = word2.description
-        case word3.rawValue:
-            resultLabel.text = word3.description
-        case word4.rawValue:
-            resultLabel.text = word4.description
-        case word5.rawValue:
-            resultLabel.text = word5.description
-        case word6.rawValue:
-            resultLabel.text = word6.description
-        case word7.rawValue:
-            resultLabel.text = word7.description
-        case word8.rawValue:
-            resultLabel.text = word8.description
-        case word9.rawValue:
-            resultLabel.text = word9.description
-        case word10.rawValue:
-            resultLabel.text = word10.description
-        case word11.rawValue:
-            resultLabel.text = word11.description
-        case word12.rawValue:
-            resultLabel.text = word12.description
+        case words[0].rawValue:
+            resultLabel.text = words[0].description
+        case words[1].rawValue:
+            resultLabel.text = words[1].description
+        case words[2].rawValue:
+            resultLabel.text = words[2].description
+        case words[3].rawValue:
+            resultLabel.text = words[3].description
+        case words[4].rawValue:
+            resultLabel.text = words[4].description
+        case words[5].rawValue:
+            resultLabel.text = words[5].description
+        case words[6].rawValue:
+            resultLabel.text = words[6].description
+        case words[7].rawValue:
+            resultLabel.text = words[7].description
+        case words[8].rawValue:
+            resultLabel.text = words[8].description
+        case words[9].rawValue:
+            resultLabel.text = words[9].description
+        case words[10].rawValue:
+            resultLabel.text = words[10].description
+        case words[11].rawValue:
+            resultLabel.text = words[11].description
         default:
             resultLabel.text = "검색 결과가 없습니다. 다른 신조어를 검색해주세요."
         }
-        
     }
     
     // MARK: - 신조어 예제 해쉬테그 랜덤표기
