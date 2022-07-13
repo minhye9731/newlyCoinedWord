@@ -91,15 +91,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         resultLabel.text = "신조어의 의미를 알아봅시다!"
     }
     
-    // MARK: - 검색버튼 클릭시
+    // MARK: - 검색버튼 클릭시 (touch up inside)
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         searchAndHashtag()
+        view.endEditing(true)
     }
     
-    // MARK: - 키보드 엔터키 클릭시
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    // MARK: - 키보드 엔터키 클릭시 (did end on exit)
+    @IBAction func keyboardEnterTapped(_ sender: UITextField) {
         searchAndHashtag()
-        return true
     }
     
     // MARK: - 검색 및 해시테그예제 랜덤표기
@@ -141,7 +141,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         default:
             resultLabel.text = "검색 결과가 없습니다. 다른 신조어를 검색해주세요."
         }
-        view.endEditing(true)
+        
     }
     
     // MARK: - 신조어 예제 해쉬테그 랜덤표기
