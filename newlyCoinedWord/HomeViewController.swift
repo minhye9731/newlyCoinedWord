@@ -159,9 +159,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
              print(randomKeys.sorted())
         }
     
-        // 버튼 4개에 반복하여 적용
-        for i in 0...3 {
-            hashTags[i].setTitle("\(randomKeys[i])", for: .normal)
+        // 버튼 hashTags.count개에 반복하여 적용
+        for i in 0...(hashTags.count - 1) {
+            hashTags[i].setTitle(randomKeys[i], for: .normal)
             hashTags[i].setTitleColor(.black, for: .normal)
             hashTags[i].backgroundColor = .white
             hashTags[i].layer.cornerRadius = 8
